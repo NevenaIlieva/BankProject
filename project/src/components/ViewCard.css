@@ -1,0 +1,214 @@
+.view-card-wrapper {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Creates the 3D perspective */
+
+.view-card-container {
+  width: 420px;
+  height: 265px;
+  perspective: 1000px;
+}
+
+/* This is the object that actually rotates */
+
+.view-card {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  transform-style: preserve-3d;
+  transition: transform 0.7s ease;
+}
+
+/* Flip the card */
+
+.view-card-container:hover .view-card {
+  transform: rotateY(180deg);
+}
+
+/* Both sides */
+
+.card-front,
+.card-back {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  box-sizing: border-box;
+  padding: 24px;
+
+  border-radius: 16px;
+
+  color: white;
+
+  backface-visibility: hidden;
+}
+
+/* Front */
+
+.card-front {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Back */
+
+.card-back {
+  transform: rotateY(180deg);
+
+  display: flex;
+  flex-direction: column;
+
+  background: #252525;
+}
+
+/* Different card designs */
+
+.view-card.standard .card-front {
+  background: linear-gradient(135deg, #444, #151515);
+}
+
+.view-card.premium .card-front {
+  background: linear-gradient(135deg, #594477, #17121f);
+}
+
+.view-card.student .card-front {
+  background: linear-gradient(135deg, #28718c, #102d38);
+}
+
+.view-card.travel .card-front {
+  background: linear-gradient(135deg, #80602f, #24180c);
+}
+
+/* Keep the same theme on the back */
+
+.view-card.standard .card-back {
+  background: linear-gradient(135deg, #303030, #111);
+}
+
+.view-card.premium .card-back {
+  background: linear-gradient(135deg, #493661, #151019);
+}
+
+.view-card.student .card-back {
+  background: linear-gradient(135deg, #20586c, #0d252e);
+}
+
+.view-card.travel .card-back {
+  background: linear-gradient(135deg, #664b25, #1c1309);
+}
+
+/* Front content */
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bank-name {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.card-type {
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+.card-number {
+  font-family: monospace;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Chip */
+
+.chip {
+  width: 48px;
+  height: 36px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  border-radius: 7px;
+  overflow: hidden;
+
+  background: linear-gradient(
+    135deg,
+    #d6c79b,
+    #a99b6e
+  );
+}
+
+.chip span {
+  border-right: 1px solid rgba(80, 70, 40, 0.5);
+}
+
+/* Back */
+
+.magnetic-strip {
+  height: 45px;
+  margin: 0 -24px 25px;
+
+  background: #111;
+}
+
+.signature-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 10px;
+}
+
+.signature {
+  flex: 1;
+  height: 32px;
+
+  background: #eee;
+}
+
+.back-text {
+  margin-top: 25px;
+
+  font-size: 10px;
+  line-height: 1.5;
+  opacity: 0.7;
+}
+
+.card-back strong {
+  margin-top: auto;
+  margin-left: auto;
+
+  font-size: 22px;
+  font-style: italic;
+}
+
+/* Description */
+
+.card-description {
+  margin-top: 16px;
+}
+
+.card-description h2 {
+  margin: 0 0 6px;
+}
+
+.card-description p {
+  margin: 0;
+
+  color: #999;
+  font-size: 14px;
+}
