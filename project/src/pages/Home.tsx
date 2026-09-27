@@ -30,7 +30,7 @@ function Home() {
         <div className="hero-card">
           <div className="bank-card">
             <div className="card-top">
-              <span>NOVA BANK</span>
+              <span>BANK</span>
               <span>PREMIUM</span>
             </div>
 

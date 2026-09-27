@@ -47,7 +47,7 @@ function ViewCard({ id, name, description }: ViewCardProps) {
             </div>
 
             <p className="back-text">
-              This card is issued by Nova Bank.
+              This card is issued by our Bank.
               <br />
               If found, please return to the nearest branch.
             </p>
