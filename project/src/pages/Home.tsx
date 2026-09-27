@@ -24,9 +24,6 @@ function Home() {
               Explore debit cards
             </Link>
 
-            <Link to="/cards" className="secondary-button">
-              View your cards
-            </Link>
           </div>
         </div>
 
@@ -87,9 +84,6 @@ function Home() {
           <h2>Choose the card that fits you.</h2>
         </div>
 
-        <Link to="/cards" className="primary-button">
-          Browse cards
-        </Link>
       </section>
     </main>
   )

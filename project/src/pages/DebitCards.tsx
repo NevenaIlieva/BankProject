@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import SearchBar from '../components/SearchBar'
 import ViewCard from '../components/ViewCard'
 import './DebitCards.css'
@@ -26,21 +27,48 @@ const cards = [
 ]
 
 function DebitCards() {
+  const [searchTerm, setSearchTerm] = useState('')
+
+  const filteredCards = cards.filter((card) => {
+    const search = searchTerm.toLowerCase().trim()
+
+    return (
+      card.name.toLowerCase().includes(search) ||
+      card.description.toLowerCase().includes(search)
+    )
+  })
+
   return (
-    <div>
-      <SearchBar />
+    <main className="debit-cards-page">
+      <div className="cards-header">
+        <div>
+          <h1>Debit Cards</h1>
+          <p>Find the card that works for you.</p>
+        </div>
+
+        <SearchBar
+          searchTerm={searchTerm}
+          onSearchChange={setSearchTerm}
+        />
+      </div>
 
       <div className="cards">
-        {cards.map((card) => (
-          <ViewCard
-            key={card.id}
-            id={card.id}
-            name={card.name}
-            description={card.description}
-          />
-        ))}
+        {filteredCards.length > 0 ? (
+          filteredCards.map((card) => (
+            <ViewCard
+              key={card.id}
+              id={card.id}
+              name={card.name}
+              description={card.description}
+            />
+          ))
+        ) : (
+          <p className="no-results">
+            No cards found for "{searchTerm}".
+          </p>
+        )}
       </div>
-    </div>
+    </main>
   )
 }
 

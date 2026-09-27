@@ -1,12 +1,9 @@
-import SearchBar from '../components/SearchBar'
 import ViewCard from '../components/ViewCard'
 
 function Projects() {
   return (
     <div>
       <h1>Projects</h1>
-
-      <SearchBar />
 
 <div className="projects">
         <ViewCard

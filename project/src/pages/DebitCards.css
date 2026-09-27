@@ -5,3 +5,45 @@
   gap: 50px 70px;
   margin-top: 30px;
 }
+
+.cards-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+
+  padding: 28px 28px 32px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #292929;
+}
+
+.cards-header > div:first-child {
+  min-width: 0;
+}
+
+.cards-header h1 {
+  margin: 0;
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+.cards-header p {
+  margin: 8px 0 0;
+  padding: 0;
+  color: #888;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.cards-header .search-bar {
+  flex: 0 1 380px;
+  width: 100%;
+}
+
+.no-results {
+  grid-column: 1 / -1;
+  color: #888;
+  font-size: 14px;
+  padding: 20px 0;
+}
